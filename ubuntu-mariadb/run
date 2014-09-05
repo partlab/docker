@@ -1,0 +1,30 @@
+#!/bin/bash
+ 
+MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD:-""}
+MARIADB_DATABASE=${MARIADB_DATABASE:-""}
+MARIADB_USER=${MARIADB_USER:-""}
+MARIADB_PASSWORD=${MARIADB_PASSWORD:-""}
+
+config=`mktemp`
+if [[ ! -f "$config" ]]; then
+    return 1
+fi
+
+cat << EOF > $config
+USE mysql;
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+UPDATE user SET password=PASSWORD("$MARIADB_ROOT_PASSWORD") WHERE user='root';
+EOF
+
+if [[ $MARIADB_DATABASE != "" ]]; then
+  echo "CREATE DATABASE IF NOT EXISTS \`$MARIADB_DATABASE\` CHARACTER SET utf8 COLLATE utf8_general_ci;" >> $config
+  if [[ $MARIADB_USER != "" ]]; then
+    echo "GRANT ALL ON \`$MARIADB_DATABASE\`.* to '$MARIADB_USER'@'%' IDENTIFIED BY '$MARIADB_PASSWORD';" >> $config
+  fi
+fi
+
+/usr/sbin/mysqld --bootstrap --verbose=0 < $config
+rm -f $config
+
+exec sudo -u mysql /usr/sbin/mysqld

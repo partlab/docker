@@ -1,0 +1,24 @@
+FROM partlab/ubuntu
+
+MAINTAINER Régis Gaidot <regis@partlab.co>
+
+ENV DEBIAN_FRONTEND noninteractive
+ENV INITRD No
+ENV LANG en_US.UTF-8
+
+RUN wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - && \
+    echo 'deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main' \
+      | tee /etc/apt/sources.list.d/elasticsearch.list && \
+    apt-get update && \
+    apt-get install --no-install-recommends -y openjdk-7-jre-headless elasticsearch && \
+    apt-get clean && \
+    update-rc.d -f elasticsearch disable 
+
+ADD run /usr/local/bin/run
+RUN chmod +x /usr/local/bin/run
+
+VOLUME ["/var/lib/elasticsearch"]
+
+EXPOSE 9200 9300
+
+CMD ["/usr/local/bin/run"]

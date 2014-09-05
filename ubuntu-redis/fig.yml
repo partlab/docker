@@ -1,0 +1,6 @@
+redis:
+  build: .
+  ports:
+    - "6379:6379"
+  volumes:
+    - data/redis:/var/lib/redis \

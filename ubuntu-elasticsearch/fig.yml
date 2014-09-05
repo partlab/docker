@@ -1,0 +1,7 @@
+elasticsearch:
+  build: .
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+  volumes:
+    - data/elasticsearch:/var/lib/elasticsearch \

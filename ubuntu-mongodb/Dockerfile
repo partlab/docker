@@ -15,6 +15,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     sed 's/^#httpinterface/httpinterface/' -i /etc/mongod.conf && \
     sed 's/^#port/port/' -i /etc/mongod.conf && \
     apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     update-rc.d -f mongod disable
 
 VOLUME ["/var/lib/mongodb"]

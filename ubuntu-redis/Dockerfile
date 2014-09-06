@@ -8,6 +8,7 @@ ENV LANG en_US.UTF-8
 
 RUN apt-get install --no-install-recommends -y redis-server && \
     apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     update-rc.d -f redis-server disable && \
     sed -i 's/^\(bind .*\)$/# \1/' /etc/redis/redis.conf && \
     sed -i 's/^\(daemonize .*\)$/# \1/' /etc/redis/redis.conf

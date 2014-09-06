@@ -1,0 +1,6 @@
+couchdb:
+  build: .
+  ports:
+    - "5984:5984"
+  volumes:
+    - data/couchdb:/var/run/couchdb \

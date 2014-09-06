@@ -1,0 +1,17 @@
+#!/bin/bash
+ 
+COUCHDB_PASSWORD=${COUCHDB_PASSWORD:-$(pwgen -c -n -1 14)}
+
+COUCHDB_DATA=/var/run/couchdb/
+
+if [ ! -d "$COUCHDB_DATA" ]; then
+  mkdir $COUCHDB_DATA
+  
+  curl -s -X PUT http://127.0.0.1:5984/_config/admins/admin -d $COUCHDB_PASSWORD
+
+  echo "========================================================================"
+  echo " couchdb password is ${COUCHDB_PASSWORD}"
+  echo "========================================================================"
+fi
+
+exec /usr/bin/couchdb

@@ -12,6 +12,7 @@ RUN apt-get update && \
       vim.tiny wget curl sudo net-tools pwgen \
       git-core logrotate && \
 		locale-gen en_US en_US.UTF-8 && \
-		apt-get clean
+		apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["bash"]

@@ -9,6 +9,7 @@ ENV LANG en_US.UTF-8
 RUN apt-get install --no-install-recommends -y php5 \
     php5-fpm php5-cli php5-mysql php5-pgsql php5-imagick php5-mcrypt \
     php5-json php5-gd php5-curl php-apc && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["/usr/bin/php"]

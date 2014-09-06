@@ -12,20 +12,17 @@ $ docker build -t partlab/ubuntu-mongodb .
 
 #### Download automated build
 
-
 ```bash
 $ docker pull partlab/ubuntu-mongodb
 ```
 
 #### Running the MongoDB server
 
-
 ```bash
 $ docker run -d -p 27017:27017 -p 28017:28017 --name mongodb partlab/ubuntu-mongodb
 ```
 
 #### Running the MongoDB server with persistent directory
-
 
 ```bash
 $ docker run -d -p 27017:27017 -p 28017:28017 --name mongodb -v <data-dir>/db:/var/lib/mongodb partlab/ubuntu-mongodb

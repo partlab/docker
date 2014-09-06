@@ -13,6 +13,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F
     apt-get install -y -q --no-install-recommends \
       postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 && \
     apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.3/main/pg_hba.conf && \
     echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf  && \
     rm -rf /var/lib/postgresql/9.3/main && \

@@ -13,6 +13,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0xcbcb082a1bb94
     apt-get install --no-install-recommends -y mariadb-server && \
     sed -i 's/^\(bind-address\s.*\)/# \1/' /etc/mysql/my.cnf && \
     apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
     update-rc.d -f mysql disable
 
 ADD run /usr/local/bin/run

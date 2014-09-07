@@ -6,7 +6,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
 
-RUN apt-get install -y openssh-server openssh-client
+RUN apt-get update && \
+    apt-get install -y openssh-server openssh-client && \
+		apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN \curl -sSL https://get.rvm.io | bash -s stable --ruby
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"

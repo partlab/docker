@@ -1,4 +1,4 @@
-FROM partlab/ubuntu
+FROM partlab/ubuntu-java
 
 MAINTAINER Régis Gaidot <regis@partlab.co>
 
@@ -10,7 +10,7 @@ RUN wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo ap
     echo 'deb http://packages.elasticsearch.org/elasticsearch/1.3/debian stable main' \
       | tee /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
-    apt-get install --no-install-recommends -y openjdk-7-jre-headless elasticsearch && \
+    apt-get install --no-install-recommends -y elasticsearch && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     update-rc.d -f elasticsearch disable 

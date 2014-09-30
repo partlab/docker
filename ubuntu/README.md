@@ -19,5 +19,5 @@ $ docker pull partlab/ubuntu
 #### Running
 
 ```bash
-$ docker run -it partlab/ubuntu
+$ docker run -it --rm partlab/ubuntu bash
 ```

@@ -13,7 +13,7 @@ RUN wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo ap
     apt-get install --no-install-recommends -y elasticsearch && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    update-rc.d -f elasticsearch disable 
+    update-rc.d -f elasticsearch disable
 
 ADD run /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run

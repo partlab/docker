@@ -25,7 +25,7 @@ $ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch partlab/ubuntu-el
 #### Running the Elasticsearch server with persistent directory
 
 ```bash
-$ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch -v <data-dir>/db:/var/lib/elasticsearch partlab/ubuntu-elasticsearch
+$ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch -v <data-dir>:/var/lib/elasticsearch partlab/ubuntu-elasticsearch
 ```
 
 ### Tips

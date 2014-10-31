@@ -1,0 +1,6 @@
+droneci:
+  build: .
+  ports:
+    - "8080:80"
+  volumes:
+    - data/droneci:/var/lib/drone \

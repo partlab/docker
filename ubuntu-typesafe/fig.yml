@@ -1,0 +1,7 @@
+typesafe:
+  build: .
+  ports:
+    - "8888:8888"
+    - "9000:9000"
+  volumes:
+    - data/typesafe:/opt/activator-1.2.10 \

@@ -1,6 +1,6 @@
 ## partlab/ubuntu
 
-Simple Ubuntu docker images. Based on docker image ubuntu:14.04
+Simple Ubuntu docker images. Based on docker image ubuntu
 
 ### Usage
 

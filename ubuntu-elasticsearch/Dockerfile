@@ -11,6 +11,7 @@ RUN wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo ap
       | tee /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y elasticsearch && \
+    /usr/share/elasticsearch/bin/plugin -install mobz/elasticsearch-head && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     update-rc.d -f elasticsearch disable

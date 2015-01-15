@@ -1,0 +1,3 @@
+[submodule "ubuntu-marathon"]
+	path = ubuntu-marathon
+	url = https://github.com/mesosphere/marathon.git

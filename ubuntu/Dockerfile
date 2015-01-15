@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:utopic
 
 MAINTAINER Régis Gaidot <regis@partlab.co>
 

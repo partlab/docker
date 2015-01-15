@@ -6,17 +6,19 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
 
-RUN cd /opt && wget http://downloads.typesafe.com/typesafe-activator/1.2.10/typesafe-activator-1.2.10.zip
-RUN apt-get update && apt-get install -y unzip
-RUN cd /opt && unzip typesafe-activator-1.2.10.zip
-RUN ln -s /opt/activator-1.2.10 /opt/activator
-RUn rm -f /opt/typesafe-activator-1.2.10.zip
-RUN apt-get remove --purge -y unzip && \
+ENV TYPESAFE_VERSION 1.2.12
+
+RUN cd /opt && wget http://downloads.typesafe.com/typesafe-activator/$TYPESAFE_VERSION/typesafe-activator-$TYPESAFE_VERSION.zip && \
+    apt-get update && apt-get install -y unzip && \
+    cd /opt && unzip typesafe-activator-$TYPESAFE_VERSION.zip && \
+    ln -s /opt/activator-$TYPESAFE_VERSION /opt/activator && \
+    rm -f /opt/typesafe-activator-$TYPESAFE_VERSION.zip && \
+    apt-get remove --purge -y unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/opt/activator-1.2.10"]
+VOLUME ["/opt/activator-$TYPESAFE_VERSION"]
 
 EXPOSE 8888 9000
 
-CMD ["/opt/activator-1.2.10/activator", "ui", "-Dhttp.address=0.0.0.0"]
+CMD ["/opt/activator-$TYPESAFE_VERSION/activator", "ui", "-Dhttp.address=0.0.0.0"]

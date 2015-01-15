@@ -9,10 +9,10 @@ ENV LANG en_US.UTF-8
 RUN apt-get update && \
     apt-get install --no-install-recommends -y nginx && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    update-rc.d -f nginx disable
+    echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
+    rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/var/www"]
+VOLUME ["/var/www", "/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d"]
 
 EXPOSE 80 443
 

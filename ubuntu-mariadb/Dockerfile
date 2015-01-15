@@ -7,7 +7,7 @@ ENV INITRD No
 ENV LANG en_US.UTF-8
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0xcbcb082a1bb943db && \
-    echo 'deb http://nwps.ws/pub/mariadb/repo/10.0/ubuntu trusty main' \
+    echo 'deb http://nwps.ws/pub/mariadb/repo/10.0/ubuntu utopic main' \
       | tee /etc/apt/sources.list.d/mariadb.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y mariadb-server && \

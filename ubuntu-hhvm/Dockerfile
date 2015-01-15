@@ -7,7 +7,7 @@ ENV INITRD No
 ENV LANG en_US.UTF-8
 
 RUN wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | sudo apt-key add - && \
-    echo 'deb http://dl.hhvm.com/ubuntu trusty main' \
+    echo 'deb http://dl.hhvm.com/ubuntu utopic main' \
       | tee /etc/apt/sources.list.d/hhvm.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y hhvm libmemcached-dev libgmp-dev && \

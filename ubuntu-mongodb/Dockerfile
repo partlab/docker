@@ -10,16 +10,12 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
     echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' \
       | tee /etc/apt/sources.list.d/10gen.list && \
     apt-get update && \
-    apt-get install -y --no-install-recommends mongodb-org-server && \
-    sed 's/^bind_ip/#bind_ip/' -i /etc/mongod.conf && \
-    sed 's/^#httpinterface/httpinterface/' -i /etc/mongod.conf && \
-    sed 's/^#port/port/' -i /etc/mongod.conf && \
+    apt-get install -y --no-install-recommends mongodb-org && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    update-rc.d -f mongod disable
+    rm -rf /var/lib/apt/lists/*
 
-VOLUME ["/var/lib/mongodb"]
+VOLUME ["/data/db"]
 
 EXPOSE 27017 28017
 
-CMD ["/usr/bin/mongod", "--config", "/etc/mongod.conf"]
+CMD ["/usr/bin/mongod", "--smallfiles"]

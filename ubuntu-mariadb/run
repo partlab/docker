@@ -10,6 +10,10 @@ if [[ ! -f "$config" ]]; then
     return 1
 fi
 
+if [ ! -f /var/lib/mysql/ibdata1 ]; then
+  mysql_install_db
+fi
+
 cat << EOF > $config
 USE mysql;
 FLUSH PRIVILEGES;

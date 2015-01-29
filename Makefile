@@ -7,7 +7,7 @@ all: build push
 
 # Build images
 
-build: b_os b_langs b_dbs b_services
+build: b_os b_langs b_dbs b_services b_tools
 
 b_os:
 	$(DOCKER) build -t partlab/ubuntu ./ubuntu
@@ -32,6 +32,9 @@ b_services:
 	$(DOCKER) build -t partlab/ubuntu-typesafe ./ubuntu-typesafe
 	$(DOCKER) build -t partlab/ubuntu-jenkins ./ubuntu-jenkins
 	$(DOCKER) build -t partlab/ubuntu-droneci ./ubuntu-droneci
+
+b_tools:
+	$(DOCKER) build -t partlab/ubuntu-tmate ./ubuntu-tmate
 
 
 # Push on registry
@@ -61,6 +64,9 @@ p_services:
 	$(DOCKER) push partlab/ubuntu-typesafe
 	$(DOCKER) push partlab/ubuntu-jenkins
 	$(DOCKER) push partlab/ubuntu-droneci
+
+p_tools:
+	$(DOCKER) push partlab/ubuntu-tmate
 
 
 # Delete all images

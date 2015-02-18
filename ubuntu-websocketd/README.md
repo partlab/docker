@@ -1,4 +1,4 @@
-## partlab/ubuntu-php5
+## partlab/ubuntu-websocketd
 
 Simple base docker image to run [websocketd](http://websocketd.com/).
 

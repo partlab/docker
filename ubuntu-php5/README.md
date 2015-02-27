@@ -33,7 +33,7 @@ $ docker run -d -p 8080:8080 --name mywebsite <website-name> php -S 0.0.0.0:8080
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port8080,tcp,,8080,,8080"
 $ boot2docker up
 ```

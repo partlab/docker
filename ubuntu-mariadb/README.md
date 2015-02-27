@@ -40,7 +40,7 @@ $ docker run -d -p 3306:3306 --name mariadb -v <data-dir>/db:/var/lib/mysql part
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port3306,tcp,,3306,,3306"
 $ boot2docker up
 ```

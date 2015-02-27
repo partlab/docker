@@ -33,7 +33,7 @@ $ docker run -d -p 8080:8080 -p 50000:50000 --name jenkins -v <data-dir>:/var/je
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port8080,tcp,,8080,,8080"
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port50000,tcp,,50000,,50000"
 $ boot2docker up

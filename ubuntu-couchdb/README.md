@@ -37,7 +37,7 @@ $ docker run -d -p 5984:5984 --name couchdb -v <data-dir>/db:/var/lib/couchdb pa
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm "boot2docker-vm" --natpf1 "tcp-port5984,tcp,,5984,,5984"
 $ boot2docker up
 ```

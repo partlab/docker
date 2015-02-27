@@ -27,7 +27,7 @@ $ docker run -ti --rm -p 2222:2222 partlab/ubuntu-tmate
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port2222,tcp,,2222,,2222"
 $ boot2docker up
 ```

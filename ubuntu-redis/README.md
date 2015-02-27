@@ -33,7 +33,7 @@ $ docker run -d -p 6379:6379 --name redis -v <data-dir>/db:/var/lib/redis partla
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port6379,tcp,,6379,,6379"
 $ boot2docker up
 ```

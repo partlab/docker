@@ -18,6 +18,7 @@ b_langs:
 	$(DOCKER) build -t partlab/ubuntu-scala ./ubuntu-scala
 	$(DOCKER) build -t partlab/ubuntu-php5 ./ubuntu-php5
 	$(DOCKER) build -t partlab/ubuntu-hhvm ./ubuntu-hhvm
+	$(DOCKER) build -t partlab/ubuntu-iojs ./ubuntu-iojs
 
 b_dbs:
 	$(DOCKER) build -t partlab/ubuntu-mariadb ./ubuntu-mariadb
@@ -32,6 +33,7 @@ b_services:
 	$(DOCKER) build -t partlab/ubuntu-typesafe ./ubuntu-typesafe
 	$(DOCKER) build -t partlab/ubuntu-jenkins ./ubuntu-jenkins
 	$(DOCKER) build -t partlab/ubuntu-droneci ./ubuntu-droneci
+	$(DOCKER) build -t partlab/ubuntu-websocketd ./ubuntu-websocketd
 
 b_tools:
 	$(DOCKER) build -t partlab/ubuntu-tmate ./ubuntu-tmate
@@ -50,6 +52,7 @@ p_langs:
 	$(DOCKER) push partlab/ubuntu-scala
 	$(DOCKER) push partlab/ubuntu-php5
 	$(DOCKER) push partlab/ubuntu-hhvm
+	$(DOCKER) push partlab/ubuntu-iojs
 
 p_dbs:
 	$(DOCKER) push partlab/ubuntu-mariadb
@@ -64,6 +67,7 @@ p_services:
 	$(DOCKER) push partlab/ubuntu-typesafe
 	$(DOCKER) push partlab/ubuntu-jenkins
 	$(DOCKER) push partlab/ubuntu-droneci
+	$(DOCKER) push partlab/ubuntu-websocketd
 
 p_tools:
 	$(DOCKER) push partlab/ubuntu-tmate

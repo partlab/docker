@@ -33,7 +33,7 @@ $ docker run -d -p 8888:8888 -p 9000:9000 --name typesafe -v <src-dir>:/opt/acti
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port8888,tcp,,8888,,8888"
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port9000,tcp,,9000,,9000"
 $ boot2docker up

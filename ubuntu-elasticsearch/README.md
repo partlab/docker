@@ -33,7 +33,7 @@ $ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch -v <data-dir>:/va
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port9200,tcp,,9200,,9200"
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port9300,tcp,,9300,,9300"
 $ boot2docker up

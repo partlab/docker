@@ -37,7 +37,7 @@ $ docker run -d -p 5432:5432 --name postgresql -v <data-dir>/db:/var/lib/postgre
 #### VirtualBox (boot2docker-vm)
 
 ```bash
-$ boot2docker down
+$ boot2docker halt
 $ VBoxManage modifyvm boot2docker-vm --natpf1 "tcp-port5432,tcp,,5432,,5432"
 $ boot2docker up
 ```

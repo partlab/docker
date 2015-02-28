@@ -11,6 +11,8 @@ ENV IOJS_PCK iojs-v$IOJS_VERSION-linux-x64
 
 RUN cd /opt && wget https://iojs.org/dist/v$IOJS_VERSION/$IOJS_PCK.tar.gz && \
     tar zxf $IOJS_PCK.tar.gz && rm $IOJS_PCK.tar.gz && \
-    cp $IOJS_PCK/bin/* /usr/bin
+    ln -s /opt/$IOJS_PCK/bin/iojs /usr/bin/ && \
+    ln -s /opt/$IOJS_PCK/bin/iojs /usr/bin/node && \
+    ln -s /opt/$IOJS_PCK/bin/npm /usr/bin/
 
 CMD ["/usr/bin/iojs"]

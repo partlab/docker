@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
 
-ENV TYPESAFE_VERSION 1.2.12
+ENV TYPESAFE_VERSION 1.3.0
 ENV TYPESAFE_PKG typesafe-activator-$TYPESAFE_VERSION
 
 RUN cd /opt && wget http://downloads.typesafe.com/typesafe-activator/$TYPESAFE_VERSION/$TYPESAFE_PKG.zip && \

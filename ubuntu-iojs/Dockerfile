@@ -13,6 +13,10 @@ RUN cd /opt && wget https://iojs.org/dist/v$IOJS_VERSION/$IOJS_PCK.tar.gz && \
     tar zxf $IOJS_PCK.tar.gz && rm $IOJS_PCK.tar.gz && \
     ln -s /opt/$IOJS_PCK/bin/iojs /usr/bin/ && \
     ln -s /opt/$IOJS_PCK/bin/iojs /usr/bin/node && \
-    ln -s /opt/$IOJS_PCK/bin/npm /usr/bin/
+    ln -s /opt/$IOJS_PCK/bin/npm /usr/bin/ && \
+    apt-get update && apt-get install python build-essential -y && \
+    npm install -g node-gyp && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 CMD ["/usr/bin/iojs"]

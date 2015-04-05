@@ -9,7 +9,7 @@ ENV LANG en_US.UTF-8
 RUN apt-get update && \
     gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
     apt-get install -y openssh-server openssh-client && \
-		apt-get clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN \curl -ksSL https://get.rvm.io | bash -s stable --ruby

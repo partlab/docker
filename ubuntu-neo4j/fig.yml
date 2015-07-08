@@ -1,0 +1,6 @@
+elasticsearch:
+  build: .
+  ports:
+    - "7474:7474"
+  volumes:
+    - data/neo4j:/var/lib/neo4j \

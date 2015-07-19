@@ -18,6 +18,22 @@ $ docker pull partlab/ubuntu-golang
 
 #### Usage
 
+#### Using (example)
+
+On Dockerfile
+
+FROM partlab/ubuntu-golang
+
+ADD . /opt/go/src/myapp
+
+RUN go get github.com/gin-gonic/gin
+RUN go install myapp
+
+ENTRYPOINT /opt/go/bin/myapp
+
+EXPOSE 8080
+
 ```bash
-$ docker run -it --rm partlab/ubuntu-golang go -version
+$ docker build -t myapp .
+$ docker run -p 8080:8080 --name myapp --rm myapp
 ```

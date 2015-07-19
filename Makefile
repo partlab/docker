@@ -19,6 +19,7 @@ b_langs:
 	$(DOCKER) build -t partlab/ubuntu-php5 ./ubuntu-php5
 	$(DOCKER) build -t partlab/ubuntu-hhvm ./ubuntu-hhvm
 	$(DOCKER) build -t partlab/ubuntu-iojs ./ubuntu-iojs
+	$(DOCKER) build -t partlab/ubuntu-golang ./ubuntu-golang
 
 b_frameworks:
 	$(DOCKER) build -t partlab/ubuntu-meteor ./ubuntu-meteor
@@ -30,6 +31,7 @@ b_dbs:
 	$(DOCKER) build -t partlab/ubuntu-couchdb ./ubuntu-couchdb
 	$(DOCKER) build -t partlab/ubuntu-mongodb ./ubuntu-mongodb
 	$(DOCKER) build -t partlab/ubuntu-redis ./ubuntu-redis
+	$(DOCKER) build -t partlab/ubuntu-neo4j ./ubuntu-neo4j
 
 b_services:
 	$(DOCKER) build -t partlab/ubuntu-elasticsearch ./ubuntu-elasticsearch

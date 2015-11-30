@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
 
-ENV SCALA_VERSION 2.11.5
+ENV SCALA_VERSION 2.11.7
 ENV SCALA_PKG scala-$SCALA_VERSION
 
 RUN echo 'deb http://dl.bintray.com/sbt/debian /' \

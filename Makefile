@@ -18,7 +18,7 @@ b_langs:
 	$(DOCKER) build -t partlab/ubuntu-scala ./ubuntu-scala
 	$(DOCKER) build -t partlab/ubuntu-php5 ./ubuntu-php5
 	$(DOCKER) build -t partlab/ubuntu-hhvm ./ubuntu-hhvm
-	$(DOCKER) build -t partlab/ubuntu-iojs ./ubuntu-iojs
+	$(DOCKER) build -t partlab/ubuntu-nodejs ./ubuntu-nodejs
 	$(DOCKER) build -t partlab/ubuntu-golang ./ubuntu-golang
 
 b_frameworks:
@@ -46,7 +46,7 @@ b_tools:
 
 # Push on registry
 
-push: ps_os p_langs p_frameworks p_dbs p_services
+push: p_langs p_frameworks p_dbs p_services
 
 p_os:
 	$(DOCKER) push partlab/ubuntu
@@ -57,7 +57,7 @@ p_langs:
 	$(DOCKER) push partlab/ubuntu-scala
 	$(DOCKER) push partlab/ubuntu-php5
 	$(DOCKER) push partlab/ubuntu-hhvm
-	$(DOCKER) push partlab/ubuntu-iojs
+	$(DOCKER) push partlab/ubuntu-nodejs
 
 p_frameworks:
 	$(DOCKER) push partlab/ubuntu-meteor

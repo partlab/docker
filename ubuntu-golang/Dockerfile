@@ -5,7 +5,7 @@ MAINTAINER Régis Gaidot <regis@partlab.co>
 ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
-ENV GOVERSION 1.4.2
+ENV GOVERSION 1.5.1
 ENV GOROOT /opt/go
 ENV GOPATH /root/.go
 

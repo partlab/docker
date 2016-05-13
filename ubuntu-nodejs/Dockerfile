@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
 ENV LANG en_US.UTF-8
 
-ENV NODEJS_VERSION 4.2.2
+ENV NODEJS_VERSION 6.1.0
 ENV NODEJS_PCK node-v$NODEJS_VERSION-linux-x64
 
 RUN cd /opt && wget https://nodejs.org/dist/v$NODEJS_VERSION/$NODEJS_PCK.tar.gz && \

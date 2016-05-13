@@ -1,16 +1,17 @@
 #!/bin/bash
 
+POSTGRES_VERSION=9.5
 POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-$(pwgen -c -n -1 14)}
 
-POSTGRESQL_BIN=/usr/lib/postgresql/9.4/bin/postgres
-POSTGRESQL_CONFIG_FILE=/etc/postgresql/9.4/main/postgresql.conf
-POSTGRESQL_DATA=/var/lib/postgresql/9.4/main
+POSTGRESQL_BIN=/usr/lib/postgresql/${POSTGRES_VERSION}/bin/postgres
+POSTGRESQL_CONFIG_FILE=/etc/postgresql/${POSTGRES_VERSION}/main/postgresql.conf
+POSTGRESQL_DATA=/var/lib/postgresql/${POSTGRES_VERSION}/main
 
 if [ ! -d "$POSTGRESQL_DATA" ]; then
   echo "${POSTGRES_PASSWORD}" > /var/lib/postgresql/pwfile
 
-  sudo -u postgres -H /usr/lib/postgresql/9.4/bin/initdb \
-    --pgdata=/var/lib/postgresql/9.4/main --pwfile=/var/lib/postgresql/pwfile \
+  sudo -u postgres -H /usr/lib/postgresql/${POSTGRES_VERSION}/bin/initdb \
+    --pgdata=/var/lib/postgresql/${POSTGRES_VERSION}/main --pwfile=/var/lib/postgresql/pwfile \
     --username=postgres --encoding=unicode --auth=trust >/dev/null
 
   echo "========================================================================"

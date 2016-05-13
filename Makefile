@@ -16,7 +16,7 @@ b_langs:
 	$(DOCKER) build -t partlab/ubuntu-ruby ./ubuntu-ruby
 	$(DOCKER) build -t partlab/ubuntu-java ./ubuntu-java
 	$(DOCKER) build -t partlab/ubuntu-scala ./ubuntu-scala
-	$(DOCKER) build -t partlab/ubuntu-php5 ./ubuntu-php5
+	$(DOCKER) build -t partlab/ubuntu-php ./ubuntu-php
 	$(DOCKER) build -t partlab/ubuntu-hhvm ./ubuntu-hhvm
 	$(DOCKER) build -t partlab/ubuntu-nodejs ./ubuntu-nodejs
 	$(DOCKER) build -t partlab/ubuntu-golang ./ubuntu-golang

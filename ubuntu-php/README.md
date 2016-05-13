@@ -1,26 +1,26 @@
-## partlab/ubuntu-php5
+## partlab/ubuntu-php
 
-Simple base docker image to run PHP5 applications.
+Simple base docker image to run php applications.
 
 ### Usage
 
 #### Build
 
 ```bash
-$ docker build -t partlab/ubuntu-php5 .
+$ docker build -t partlab/ubuntu-php .
 ```
 
 #### Download automated build
 
 ```bash
-$ docker pull partlab/ubuntu-php5
+$ docker pull partlab/ubuntu-php
 ```
 
 #### Using (example)
 
 On Dockerfile
 
-FROM partlab/ubuntu-php5
+FROM partlab/ubuntu-php
 ADD . /<path>
 
 ```bash

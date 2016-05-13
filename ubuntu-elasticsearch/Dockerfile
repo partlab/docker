@@ -7,7 +7,7 @@ ENV INITRD No
 ENV LANG en_US.UTF-8
 
 RUN wget -qO - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add - && \
-    echo 'deb http://packages.elasticsearch.org/elasticsearch/1.5/debian stable main' \
+    echo 'deb http://packages.elasticsearch.org/elasticsearch/2.x/debian stable main' \
       | tee /etc/apt/sources.list.d/elasticsearch.list && \
     apt-get update && \
     apt-get install --no-install-recommends -y elasticsearch && \

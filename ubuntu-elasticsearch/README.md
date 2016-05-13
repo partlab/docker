@@ -16,7 +16,7 @@ $ docker build -t partlab/ubuntu-elasticsearch .
 $ docker pull partlab/ubuntu-elasticsearch
 ```
 
-#### Running the Elasticsearch server 
+#### Running the Elasticsearch server
 
 ```bash
 $ docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch partlab/ubuntu-elasticsearch
